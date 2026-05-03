@@ -15,8 +15,12 @@ jobs:
         run: pip install numpy matplotlib 
       - name: Run Beta Simulations 
         run: python research/002-doping-physics/simulations/trap_visualization.py 
-      - name: Upload Plot Artifact 
+      - name: Compile PDF Verdict 
+        uses: xu-cheng/latex-action@v3 
+        with: 
+          root_file: research/002-doping-physics/verdicts/final_verdict_beta.tex 
+      - name: Upload PDF Artifact 
         uses: actions/upload-artifact@v4 
         with: 
-          name: beta-research-plots 
-          path: research/002-doping-physics/verdicts/trap_curve.png 
+          name: OPRC-Beta-Verdict 
+          path: final_verdict_beta.pdf 
