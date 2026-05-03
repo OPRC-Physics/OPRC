@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4  # Updated to v4
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v5 # Updated to v5
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -20,18 +20,20 @@ jobs:
         run: pip install numpy matplotlib
 
       - name: Run Physics Simulations
+        # This tells GitHub to look inside the specific research folder
+        working-directory: ./research/001-electron-localization
         run: |
-          python research/001-electron-localization/band_gap_simulation.py
-          python research/001-electron-localization/thermal_occupancy.py
-          python research/001-electron-localization/localization_plot.py
+          python band_gap_simulation.py
+          python thermal_occupancy.py
+          python localization_plot.py
 
       - name: Compile Final Verdict PDF
-        uses: xu-cheng/latex-action@v3 # Updated to v3
+        uses: xu-cheng/latex-action@v3
         with:
           root_file: research/001-electron-localization/final_verdict.tex
 
       - name: Upload Verdict
-        uses: actions/upload-artifact@v4 # Updated to v4 (Fixes the error)
+        uses: actions/upload-artifact@v4
         with:
           name: OPRC-Final-Verdict
           path: final_verdict.pdf
