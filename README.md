@@ -32,5 +32,11 @@ Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) before participating.
 - **Software/Code:** Released under the [MIT License](https://opensource.org/licenses/MIT).
 - **Anti-Patent Policy:** We strongly discourage the patenting of fundamental physical principles[cite: 4].
 
+### ⚖️ Intellectual Property Notice
+In accordance with Article IV of the OPRC Charter:
+- **Software/Source Code:** Licensed under the [MIT License](./LICENSE).
+- **Theoretical Works, Papers, and Derivations:** Licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+- **Anti-Patent Policy:** This organization maintains a strict anti-patent stance on fundamental physical principles to prevent the privatization of physical laws[cite: 4].
+
 ---
 *The OPRC is an unincorporated digital association. All contributors maintain moral rights to their work.*
