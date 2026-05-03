@@ -15,3 +15,8 @@ jobs:
         run: pip install numpy matplotlib 
       - name: Run Beta Simulations 
         run: python research/002-doping-physics/simulations/trap_visualization.py 
+      - name: Upload Plot Artifact 
+        uses: actions/upload-artifact@v4 
+        with: 
+          name: beta-research-plots 
+          path: research/002-doping-physics/verdicts/trap_curve.png 
