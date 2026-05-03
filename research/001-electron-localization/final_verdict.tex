@@ -1,13 +1,57 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1in, top=1.5in}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+
+% OPRC Letterhead Configuration
+\pagestyle{fancy}
+\fancyhf{}
+\chead{
+    \textbf{\Large OPEN PHYSICS RESEARCH COLLECTIVE}\\
+    \textit{Decentralized Research Cluster: Matter \& Materials}\\
+    \rule{\textwidth}{1pt}
+}
+\lfoot{Verdict ID: OPRC-2026-001}
+\rfoot{Page \thepage}
+
+\begin{document}
+
+\begin{center}
+    \section*{OFFICIAL VERDICT: RFC \#1}
+    \textbf{Subject:} The Absence of Free Electrons in Ideal Insulators
+\end{center}
+
+\subsection*{1. Collective Conclusion}
+Per the operational mandate of the Founding Charter, the OPRC has conducted a three-phase verification of electronic states in insulating crystals. 
+
+\textbf{Final Verdict:} Ideal insulators explicitly do not contain free electrons. The conduction band remains statistically vacant under standard conditions, and all valence electrons are spatially localized to atomic sites.
+
+\subsection*{2. Computational Proofs}
+The following data was generated dynamically by the OPRC Digital Lab:
+
 \begin{figure}[h]
     \centering
-    % Added the relative path to the image
     \includegraphics[width=0.7\textwidth]{research/001-electron-localization/insulator_gap_plot.png}
     \caption{Phase 1: Proof of Forbidden Energy Zones where $|\cos(ka)| > 1$.}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    % Added the relative path to the image
     \includegraphics[width=0.7\textwidth]{research/001-electron-localization/thermal_proof.png}
     \caption{Phase 2: Statistical probability of conduction band occupancy ($n_c \approx 10^{-87}$).}
 \end{figure}
+
+\subsection*{3. Certification}
+This verdict is issued under the Open Source Mandate. All mathematical derivations are verified reproducible via the OPRC containerization protocol.
+
+\vfill
+\begin{flushright}
+    \textbf{Authenticated by OPRC Genesis Branch}\\
+    \textit{Timestamp: \today}\\
+    \textbf{E pur si muove.}
+\end{flushright}
+
+\end{document}
