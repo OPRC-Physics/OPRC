@@ -22,3 +22,11 @@ $$\frac{E_g}{2k_B T} = \frac{5}{0.05} = 200$$
 $$n_c \propto e^{-200} \approx 10^{-87}$$
 
 This mathematically infinitesimal value confirms that, for all physical intents and purposes, the conduction band is empty and no free electrons exist.
+\section{Phase 3: Real-Space Localization via Wannier Functions}
+To demonstrate that electrons in an insulator are "stuck" to atomic cores, we transform the delocalized Bloch states $\psi_{n\mathbf{k}}(\mathbf{r})$ into localized Wannier functions $w_n(\mathbf{r} - \mathbf{R})$:
+$$w_n(\mathbf{r} - \mathbf{R}) = \frac{V}{(2\pi)^3} \int_{BZ} e^{-i\mathbf{k} \cdot \mathbf{R}} \psi_{n\mathbf{k}}(\mathbf{r}) d\mathbf{k}$$
+
+\subsection{The Localization Proof}
+In a metal, these functions are broad and overlap significantly. In an ideal insulator, due to the lack of conduction band occupancy (Phase 2), the electronic density is composed entirely of these Wannier states centered at lattice sites $\mathbf{R}$. The decay of these functions is exponential:
+$$|w_n(\mathbf{r})| \sim e^{-h|\mathbf{r}|}$$
+where $h$ is related to the magnitude of the band gap $E_g$. This exponential decay mathematically defines the absence of "free" electrons, as the probability density vanishes rapidly away from the atomic center.
