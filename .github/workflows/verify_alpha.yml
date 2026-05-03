@@ -1,0 +1,37 @@
+name: OPRC Project Alpha Verification
+on:
+  push:
+    branches: [ main, project-alpha-insulators ]
+  workflow_dispatch:
+
+jobs:
+  build_verdict:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install numpy matplotlib
+
+      - name: Run Physics Simulations
+        run: |
+          python research/001-electron-localization/band_gap_simulation.py
+          python research/001-electron-localization/thermal_occupancy.py
+          python research/001-electron-localization/localization_plot.py
+
+      - name: Compile Final Verdict PDF
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: research/001-electron-localization/final_verdict.tex
+
+      - name: Upload Verdict
+        uses: actions/upload-artifact@v3
+        with:
+          name: OPRC-Final-Verdict
+          path: final_verdict.pdf
