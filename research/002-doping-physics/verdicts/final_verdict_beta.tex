@@ -1,16 +1,40 @@
 \documentclass[11pt]{article}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{geometry}
+\geometry{margin=1in}
+
 \begin{document}
-\title{OFFICIAL VERDICT: RFC \#2 --- The Doping-Trap Transition}
+\title{OFFICIAL VERDICT: RFC \#2 --- Project Beta Full Phase Analysis}
 \author{Open Physics Research Collective}
+\date{\today}
 \maketitle
-\section{Research Summary}
-We have modeled the transition between shallow donors and deep-level traps. 
-\section{Conclusion}
-The Critical Ionization Boundary occurs at $E_i \approx 0.1 \text{ eV}$. Beyond this point, the impurity acts as a recombination center (trap) rather than a carrier source.
+
+\section{Introduction}
+Project Beta investigates the transition boundary where beneficial semiconductor dopants collapse into localized carrier traps. We approach this using a unified three-phase computational framework.
+
+\section{Phase 1: Thermal Ionization Efficiency}
+We analyze the carrier contribution efficiency $\eta$ as a function of ionization energy $E_i$ at $T=300 \text{ K}$.
 \begin{figure}[h]
-\centering \includegraphics[width=0.8\textwidth]{research/002-doping-physics/verdicts/trap_curve.png}
-\caption{Verified decay of dopant efficiency.}
+\centering \includegraphics[width=0.55\textwidth]{research/002-doping-physics/verdicts/phase1_efficiency.png}
+\caption{The rapid collapse of ionization probability beyond $0.1 \text{ eV}$.}
 \end{figure}
+
+\section{Phase 2: Wavefunction Spatial Confinement}
+As the dopant potential deepens, the effective Bohr radius $a^*$ contracts. This confines the charge carrier tightly to the impurity site.
+\begin{figure}[h]
+\centering \includegraphics[width=0.55\textwidth]{research/002-doping-physics/verdicts/phase2_confinement.png}
+\caption{Radial probability distribution comparison.}
+\end{figure}
+
+\section{Phase 3: Inter-Impurity Quantum Tunneling}
+We evaluate the tunneling probability across neighboring lattice sites. For deep traps, the tunneling probability decays exponentially over typical lattice separation distances.
+\begin{figure}[h]
+\centering \includegraphics[width=0.55\textwidth]{research/002-doping-physics/verdicts/phase3_tunneling.png}
+\caption{Tunneling suppression in deep states.}
+\end{figure}
+
+\section{Final Collective Verdict}
+We formally define the boundary between dopant and trap at $E_{crit} \approx 0.1 \text{ eV}$. Beyond this boundary, spatial confinement and tunneling suppression render the impurity a recombination center rather than a carrier donor.
+
 \end{document}
