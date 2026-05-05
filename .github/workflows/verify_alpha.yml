@@ -1,26 +1,26 @@
-name: OPRC Research Pipeline 
-on: 
-  push: 
-    branches: [ main, project-beta-doping ] 
-jobs: 
-  verify-beta: 
-    runs-on: ubuntu-latest 
-    steps: 
-      - uses: actions/checkout@v4 
-      - name: Set up Python 
-        uses: actions/setup-python@v5 
-        with: 
-          python-version: '3.10' 
-      - name: Install dependencies 
-        run: pip install numpy matplotlib 
-      - name: Run Beta Simulations 
-        run: python research/002-doping-physics/simulations/trap_visualization.py 
-      - name: Compile PDF Verdict 
-        uses: xu-cheng/latex-action@v3 
-        with: 
-          root_file: research/002-doping-physics/verdicts/final_verdict_beta.tex 
-      - name: Upload PDF Artifact 
-        uses: actions/upload-artifact@v4 
-        with: 
-          name: OPRC-Beta-Verdict 
-          path: final_verdict_beta.pdf 
+name: OPRC Research Pipeline
+on:
+  push:
+    branches: [ main, project-beta-doping ]
+jobs:
+  verify-beta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install numpy matplotlib
+      - name: Run Multi-Phase Simulations
+        run: python research/002-doping-physics/simulations/run_all_phases.py
+      - name: Compile PDF Verdict
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: research/002-doping-physics/verdicts/final_verdict_beta.tex
+      - name: Upload PDF Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: OPRC-Beta-Unified-Verdict
+          path: final_verdict_beta.pdf
